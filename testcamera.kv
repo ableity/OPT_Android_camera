@@ -7,7 +7,7 @@
             resolution: (1920, 1080)
             size_hint: 2,2
             pos_hint: {"center_x":0.5,"center_y":0.6}
-            canvas.before:
+            canvas.before:      #10-15行修复安卓的相机旋转问题
                 PushMatrix
                 Rotate:
                     angle: -90
