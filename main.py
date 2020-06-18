@@ -26,6 +26,7 @@ class CameraClick(FloatLayout):
             print("Captured")
 
     def showpic(self):
+        self.ids.led.pos_hint = {"center_x": 0.5, "center_y": 0.6}
         if self.flag == 0:
             self.ids.led.source = getcwd()+"/"+"IMG.png"
             self.ids.led.reload()
