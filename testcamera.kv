@@ -7,18 +7,16 @@
             resolution: (1920, 1080)
             size_hint: 2,2
             pos_hint: {"center_x":0.5,"center_y":0.6}
-            canvas.before:      #10-15行修复安卓的相机旋转问题
+            canvas.before:
                 PushMatrix
                 Rotate:
-                    angle: -90
-                    origin: self.center
+                    #angle: -90
+                    #origin: self.center
             canvas.after:
                 PopMatrix
             play: True
         Image:
             id: led
-            source:"IMG.png"
-            size_hint:(0, 0)
             pos_hint:{"center_x":0.5,"center_y":0.6}
         Button:
             text: "capture"
