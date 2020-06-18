@@ -10,14 +10,14 @@
             canvas.before:
                 PushMatrix
                 Rotate:
-                    #angle: -90
-                    #origin: self.center
+                    angle: -90
+                    origin: self.center
             canvas.after:
                 PopMatrix
             play: True
         Image:
             id: led
-            pos_hint:{"center_x":0.5,"center_y":0.6}
+            pos_hint:{"center_x":-0.5,"center_y":-0.6}
         Button:
             text: "capture"
             size_hint: 0.25, 0.18
