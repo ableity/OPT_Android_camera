@@ -1,0 +1,42 @@
+<CameraClick>:
+    FloatLayout:
+        orientation:"vertical"
+        Camera:
+            id:camera
+            zoom: 30
+            resolution: (1920, 1080)
+            size_hint: 2,2
+            pos_hint: {"center_x":0.5,"center_y":0.6}
+            canvas.before:
+                PushMatrix
+                Rotate:
+                    angle: -90
+                    origin: self.center
+            canvas.after:
+                PopMatrix
+            play: True
+        Image:
+            id: led
+            source:"IMG.png"
+            size_hint:(0, 0)
+            pos_hint:{"center_x":0.5,"center_y":0.6}
+        Button:
+            text: "capture"
+            size_hint: 0.25, 0.18
+            pos_hint: {"right":1,"y":0}
+            on_press: root.capture()
+        Button:
+            text: "show"
+            size_hint: 0.25, 0.18
+            pos_hint: {"x":0,"y":0}
+            on_press: root.showpic()
+        Button:
+            text: "zoom+"
+            size_hint: 0.25, 0.18
+            pos_hint: {"x":0.50,"y":0}
+            on_press: root.zoomadd()
+        Button:
+            text: "zoom-"
+            size_hint: 0.25, 0.18
+            pos_hint: {"x":0.25,"y":0}
+            on_press: root.zoomdev()
