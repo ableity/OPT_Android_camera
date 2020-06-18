@@ -32,11 +32,11 @@ class CameraClick(FloatLayout):
             self.ids.led.reload()
             self.ids.led.size_hint = (2, 2)
             self.flag = 1
-            self.ids.camera.play = False
+           # self.ids.camera.play = False 增加切换流畅度
         else:
             self.ids.led.size_hint = (0, 0)
             self.flag = 0
-            self.ids.camera.play = True
+           # self.ids.camera.play = True
 
     def zoomadd(self):
         if self.zoom < 90 and self.flag == 0:
