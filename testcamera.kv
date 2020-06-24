@@ -3,9 +3,12 @@
         orientation:"vertical"
         Camera:
             id:camera
-            zoom: 30
-            resolution: (1920, 1080)
-            size_hint: 2,2
+            zoom: 20
+            resolution: (1280, 960)
+            #size_hint: 2, 2
+            size : (640, 480)
+            focusmode: "continuous-picture"
+            #focusmode: "fixed"
             pos_hint: {"center_x":0.5,"center_y":0.6}
             canvas.before:
                 PushMatrix
@@ -18,15 +21,41 @@
         Image:
             id: led
             pos_hint:{"center_x":-0.5,"center_y":-0.6}
+        Label:
+        	id: num_of_pho
+        	text: "[ref='click']NUM:360[/ref]"
+        	font_size: 60
+        	pos_hint: {"center_x":0.8, "center_y":0.9}
+        	on_ref_press:
+        	    root.change_num()
+        	markup: True
+        Label:
+        	id: nap_of_pho
+        	text: "[ref='click']NAP:1[/ref]"
+        	font_size: 60
+        	pos_hint: {"center_x":0.2, "center_y":0.9}
+        	on_ref_press:
+        	    root.change_nap()
+        	markup: True
+        Label:
+        	id: sum_nap_of_pho
+        	text: "SUM:0"
+        	font_size: 60
+        	pos_hint: {"center_x":0.5, "center_y":0.9}
         Button:
-            text: "capture"
-            size_hint: 0.25, 0.18
+            text: "check \n capture"
+            size_hint: 0.125, 0.18
             pos_hint: {"right":1,"y":0}
             on_press: root.capture()
         Button:
-            text: "show"
-            size_hint: 0.25, 0.18
+            text: "continuous\n  capture"
+            size_hint: 0.25,0.18
             pos_hint: {"x":0,"y":0}
+            on_press: root.capture_begin()
+        Button:
+            text: "show"
+            size_hint: 0.125, 0.18
+            pos_hint: {"right":0.875,"y":0}
             on_press: root.showpic()
         Button:
             text: "zoom+"
