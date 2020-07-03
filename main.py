@@ -126,4 +126,4 @@ class TestCamera(App):
 
 
 if __name__ == "__main__":
-    TestCamera().run()
+    TestCamera().run() 
